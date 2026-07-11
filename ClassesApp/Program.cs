@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Car audi = new Car();
-            Car bmw = new Car();
+            Car audi = new Car("A3","german");
+            Car bmw = new Car("I7","austulia");
+            
 
             Console.WriteLine("Hello, World!");
 

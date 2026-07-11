@@ -205,3 +205,35 @@ namespace ClassesApp
   So that audi knows that its auti  
   And the bmw knows that its bmw  
   Which we do next .
+
+- So we created our 🔑`custom Constructor`, how is this custom Constructor is different to  
+  Any other given Constructors ❔  
+  💡 :  
+  We'll going to look at later on .
+
+one more thing about private member variable → `private string _model = "";`  
+We can't access that in the `Program.cs` ↓  
+
+```cs
+// Program.cs
+
+namespace ClassesApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Car audi = new Car("A3","german");
+            Car bmw = new Car("I7","austulia");
+            bmw._model; ❌ We can't access it 
+
+            Console.WriteLine("Hello, World!");
+
+            Console.ReadKey();
+        }
+    }
+}
+
+```
+- `bmw._model;` :  
+  We'll see how we can access it .
