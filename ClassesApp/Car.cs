@@ -15,8 +15,23 @@ namespace ClassesApp
 
         // property
         public string Model1 { get => _model; set => _model = value; }
-        public string Brand { get => _brand; set => _brand = value; }
-
+        public string Brand
+        {
+            get => _brand;
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    Console.WriteLine("You entered Nothing!");
+                    _brand = "Default Value";
+                }
+                else
+                {
+                    _brand = value;
+                }
+                
+            }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="Car"/> class.
         /// </summary>

@@ -7,9 +7,13 @@
             Car audi = new Car("A3","german");
             Car bmw = new Car("I7","austulia");
 
-            audi.Model1 = "";
+            Console.Write("Please enter the Brand name: ");
 
-            Console.WriteLine("Hello, World!");
+            // Setting _brand
+            audi.Brand = Console.ReadLine();
+
+            // Gettig _brand
+            Console.WriteLine("You entered " + audi.Brand);
 
             Console.ReadKey();
         }
