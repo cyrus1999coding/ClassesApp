@@ -13,6 +13,9 @@ namespace ClassesApp
         private string _model = "";
         private string _brand = "";
 
+        // property
+        public string Model1 { get => _model; set => _model = value; }
+        public string Brand { get => _brand; set => _brand = value; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Car"/> class.
@@ -20,9 +23,9 @@ namespace ClassesApp
         /// <param name="model">The model name of the car.</param>
         public Car(string model, string brand)
         {
-            _model = model;
-            _brand = brand;
-            Console.WriteLine("A car of the model " + _model + " With brand of " + _brand + " has been created Successfully");
+            Model1 = model;
+            Brand = brand;
+            Console.WriteLine("A car of the model " + Model1 + " With brand of " + Brand + " has been created Successfully");
         }
 
     }
