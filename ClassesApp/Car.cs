@@ -10,17 +10,18 @@ namespace ClassesApp
     internal class Car
     {
         // member variable
-        private string _model = "";
+        // private string _model = "";
         private string _brand = "";
-        private bool _isLuxury;
+        //private bool _isLuxury;
 
         // property
-        public string Model1 { get => _model; set => _model = value; }
+        // public string Model1 { get => _model; set => _model = value; }
+        public string Model { get; set; }
         public string Brand
         {
             get
             {
-                if (_isLuxury)
+                if (IsLuxury)
                 {
                     return _brand + " - Luxury Edition";
                 }
@@ -44,7 +45,8 @@ namespace ClassesApp
             }
         }
 
-        public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        //public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        public bool IsLuxury { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Car"/> class.
@@ -52,10 +54,10 @@ namespace ClassesApp
         /// <param name="model">The model name of the car.</param>
         public Car(string model, string brand, bool isLuxury)
         {
-            Model1 = model;
+            Model = model;
             Brand = brand;
             IsLuxury = isLuxury;
-            Console.WriteLine("A car of the model " + Model1 + " With brand of " + Brand + " has been created Successfully");
+            Console.WriteLine("A car of the model " + Model + " With brand of " + Brand + " has been created Successfully");
         }
 
     }
