@@ -22,5 +22,13 @@ namespace ClassesApp
         {
             Name=name;
         }
+
+        // Default COnstructor
+        public Customer()
+        {
+            Name = "Default Name";
+            Address = "No Address";
+            ContactNumber = "No ContactNumber";
+        }
     }
 }
