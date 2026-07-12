@@ -4,16 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Customer earl = new Customer("Earl");
-            Customer frankTheTank = new Customer("frankTheTank","Mainstreet 1","123123");
+            Customer customer = new Customer();
+            customer.SetDetails("Denis", "MainSStreet 1");
 
-            Customer myCustomer = new Customer();
+            Customer customer1 = new Customer("Frank");
 
-            myCustomer.SetDetails("Frank", "MainStreet 2", "123123");
-
-            Console.WriteLine("Details abot customer: "+ myCustomer.Name);
+            Console.WriteLine("Contactnumber of Frank is: " + customer1.ContactNumber);
 
             Console.ReadKey();
+
         }
     }
 }
