@@ -4,15 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Customer customer = new Customer();
-            customer.SetDetails("Denis", "MainSStreet 1");
+            Console.WriteLine(AddNum(15, 25));
 
-            Customer customer1 = new Customer("Frank");
-
-            Console.WriteLine("Contactnumber of Frank is: " + customer1.ContactNumber);
+            // Using the named parameter 
+            Console.WriteLine(AddNum(firstNum: 23,secondNum: 25)); 
 
             Console.ReadKey();
+        }
 
+        static int AddNum(int firstNum, int secondNum)
+        {
+            return firstNum + secondNum;
         }
     }
 }
