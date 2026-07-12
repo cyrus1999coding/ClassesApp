@@ -4,10 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Car myAudi = new Car("A3","Audi",false);
-            Car myBMW = new Car("i7", "BMW ", true);
-            myAudi.Drive();
-            myBMW.Drive();
+            Customer earl = new Customer("Earl");
+            Customer frankTheTank = new Customer("frankTheTank","Mainstreet 1","123123");
+
+            Customer myCustomer = new Customer();
+
+            myCustomer.SetDetails("Frank", "MainStreet 2", "123123");
+
+            Console.WriteLine("Details abot customer: "+ myCustomer.Name);
 
             Console.ReadKey();
         }
