@@ -60,5 +60,10 @@ namespace ClassesApp
             Console.WriteLine("A car of the model " + Model + " With brand of " + Brand + " has been created Successfully");
         }
 
+        public void Drive()
+        {
+            Console.WriteLine($"I'm a {Model} driving, And I'm driving");
+        }
+
     }
 }
