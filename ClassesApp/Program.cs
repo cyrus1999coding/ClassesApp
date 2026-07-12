@@ -4,17 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(AddNum(15, 25));
+            Customer customer = new Customer();
+            customer.SetDetails("Denis", "MainStreet");
 
-            // Using the named parameter 
-            Console.WriteLine(AddNum(firstNum: 23,secondNum: 25)); 
+            Customer.DoSomeCustomerStuff();
 
             Console.ReadKey();
         }
 
-        static int AddNum(int firstNum, int secondNum)
-        {
-            return firstNum + secondNum;
-        }
     }
 }

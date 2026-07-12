@@ -16,6 +16,8 @@ namespace ClassesApp
             Name=name;
             Address=address;
             ContactNumber=contactNumber;
+
+            //SetDetails(name, address);
         }
 
         // Default COnstructor
@@ -31,6 +33,11 @@ namespace ClassesApp
             Name = name;
             Address = address;
             ContactNumber = contactNumber;
+        }
+
+        public static void DoSomeCustomerStuff()
+        {
+            Console.WriteLine("Im' doing some customer stuff");
         }
     }
 }
