@@ -347,3 +347,22 @@ namespace ClassesApp
 
 ```
 - 🚀❌ This also wouldn't work because it has not the `get Accessor `.
+
+🔑 There is also more Advanced Techniques that will also not allowing us to access the password  
+like use hashes and all that suff ( for later )
+
+What is a hash ❔   
+💡 :  
+A hash function takes some input (like a password) and converts it into a fixed-looking random string.
+
+Example:
+
+```text
+Password:
+MySecret123
+
+        ↓ hash function
+
+Hash:
+9f86d081884c7d659a2feaa0c55ad015...
+```
