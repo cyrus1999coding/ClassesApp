@@ -7,8 +7,12 @@ using System.Text;
 /// </summary>
 namespace ClassesApp
 {
+    
+
     internal class Car
     {
+        public static int NumberOfCars = 0;
+
         // member variable
         // private string _model = "";
         private string _brand = "";
@@ -54,10 +58,17 @@ namespace ClassesApp
         /// <param name="model">The model name of the car.</param>
         public Car(string model, string brand, bool isLuxury)
         {
+            NumberOfCars++;
+
             Model = model;
             Brand = brand;
             IsLuxury = isLuxury;
             Console.WriteLine("A car of the model " + Model + " With brand of " + Brand + " has been created Successfully");
+        }
+
+        public Car()
+        {
+            NumberOfCars++;
         }
 
         public void Drive()

@@ -1,0 +1,212 @@
+﻿# Static Fields
+
+We're going to look at `Static` `Fields`/`Variable`
+
+```cs
+Car.cs
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+/// <summary>
+/// Represents a car with a specific model.
+/// </summary>
+namespace ClassesApp
+{
+    
+
+    internal class Car
+    {
+        public static int NumberOfCars = 0; 👈
+
+        // member variable
+        // private string _model = "";
+        private string _brand = "";
+        //private bool _isLuxury;
+
+        // property
+        // public string Model1 { get => _model; set => _model = value; }
+        public string Model { get; set; }
+        public string Brand
+        {
+            get
+            {
+                if (IsLuxury)
+                {
+                    return _brand + " - Luxury Edition";
+                }
+                else 
+                {
+                    return _brand; 
+                }
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    Console.WriteLine("You entered Nothing!");
+                    _brand = "Default Value";
+                }
+                else
+                {
+                    _brand = value;
+                }
+
+            }
+        }
+
+        //public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        public bool IsLuxury { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Car"/> class.
+        /// </summary>
+        /// <param name="model">The model name of the car.</param>
+        public Car(string model, string brand, bool isLuxury)
+        {
+            NumberOfCars++; 👈
+
+            Model = model;
+            Brand = brand;
+            IsLuxury = isLuxury;
+            Console.WriteLine("A car of the model " + Model + " With brand of " + Brand + " has been created Successfully");
+        }
+
+        public void Drive()
+        {
+            Console.WriteLine($"I'm a {Model} driving, And I'm driving");
+        }
+
+    }
+}
+```
+- Each time we create a new Car we add to `NumberOfCars` .
+
+If we wanan to more precise we need to make sure that the `Default Constructor` also has an Increment :  
+
+```cs
+// Car.cs
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+/// <summary>
+/// Represents a car with a specific model.
+/// </summary>
+namespace ClassesApp
+{
+    
+
+    internal class Car
+    {
+        public static int NumberOfCars = 0; 👈
+
+        // member variable
+        // private string _model = "";
+        private string _brand = "";
+        //private bool _isLuxury;
+
+        // property
+        // public string Model1 { get => _model; set => _model = value; }
+        public string Model { get; set; }
+        public string Brand
+        {
+            get
+            {
+                if (IsLuxury)
+                {
+                    return _brand + " - Luxury Edition";
+                }
+                else 
+                {
+                    return _brand; 
+                }
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    Console.WriteLine("You entered Nothing!");
+                    _brand = "Default Value";
+                }
+                else
+                {
+                    _brand = value;
+                }
+
+            }
+        }
+
+        //public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        public bool IsLuxury { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Car"/> class.
+        /// </summary>
+        /// <param name="model">The model name of the car.</param>
+        public Car(string model, string brand, bool isLuxury)
+        {
+            NumberOfCars++; 👈
+
+            Model = model;
+            Brand = brand;
+            IsLuxury = isLuxury;
+            Console.WriteLine("A car of the model " + Model + " With brand of " + Brand + " has been created Successfully");
+        }
+
+        public Car()
+        {
+            NumberOfCars++; 👈
+        } 
+
+        public void Drive()
+        {
+            Console.WriteLine($"I'm a {Model} driving, And I'm driving");
+        }
+
+    }
+}
+```
+
+- `public static int NumberOfCars = 0;` :  
+  🔑🔑 This time :  
+  ⛔ It's not a `Private Member Variable`, So we don't need to use `_`  
+  ✅ Because it's `static variable` we're using Capital letter here .
+  - It's `public` So we can `Access` it from outside the `Car Class` .
+
+It now allow us to know how many Cars we're producing .  
+
+```cs
+// Program.cs
+
+namespace ClassesApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Car car = new Car();
+            Car car2 = new Car();
+            Car car3 = new Car("A3", "Audi", false);
+
+            Console.WriteLine("Number of car produced " + Car.NumberOfCars); 👈
+
+            Console.ReadKey();
+        }
+
+    }
+}
+
+}
+```
+
+```console
+A car of the model A3 With brand of Audi has been created Successfully
+Number of car produced 3
+```
+
+- ⛔ We can't use it on Car Objects .
+- ✅ Only the Class Car itself .
+- 🚀 This was the power of 🔑`public static variable` .
