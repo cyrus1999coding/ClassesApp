@@ -11,6 +11,13 @@ namespace ClassesApp
 
         private readonly int _id;
 
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
         public string Name { get; set; }
         public string Address { get; set; }
 
@@ -19,9 +26,9 @@ namespace ClassesApp
         public Customer(string name, string address = "NA", string contactNumber = "NA")
         {
             _id = nextId++;
-            Name =name;
-            Address=address;
-            ContactNumber=contactNumber;
+            Name = name;
+            Address = address;
+            ContactNumber = contactNumber;
 
             //SetDetails(name, address);
         }
@@ -29,7 +36,7 @@ namespace ClassesApp
         // Default COnstructor
         public Customer()
         {
-            _id =nextId++;
+            _id = nextId++;
             Name = "Default Name";
             Address = "No Address";
             ContactNumber = "No ContactNumber";
