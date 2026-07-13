@@ -7,6 +7,7 @@
             Car car = new Car();
             Car car2 = new Car();
             Car car3 = new Car("A3", "Audi", false);
+            car3.Drive();
 
             Console.WriteLine("Number of car produced " + Car.NumberOfCars);
 
