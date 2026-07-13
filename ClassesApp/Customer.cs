@@ -6,6 +6,11 @@ namespace ClassesApp
 {
     internal class Customer
     {
+        // static field to hold the next ID avaiable 
+        private static int nextId = 0;
+
+        private readonly int _id;
+
         public string Name { get; set; }
         public string Address { get; set; }
 
@@ -13,7 +18,8 @@ namespace ClassesApp
 
         public Customer(string name, string address = "NA", string contactNumber = "NA")
         {
-            Name=name;
+            _id = nextId++;
+            Name =name;
             Address=address;
             ContactNumber=contactNumber;
 
@@ -23,6 +29,7 @@ namespace ClassesApp
         // Default COnstructor
         public Customer()
         {
+            _id =nextId++;
             Name = "Default Name";
             Address = "No Address";
             ContactNumber = "No ContactNumber";
@@ -33,6 +40,11 @@ namespace ClassesApp
             Name = name;
             Address = address;
             ContactNumber = contactNumber;
+        }
+
+        public void GetDetails()
+        {
+            Console.WriteLine($"Details about the customer:\nName is: {Name}\nID is {_id}");
         }
 
         public static void DoSomeCustomerStuff()
