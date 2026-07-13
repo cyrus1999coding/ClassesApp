@@ -12,7 +12,9 @@
             customer2.GetDetails();
             customer3.GetDetails();
 
-            Console.WriteLine("Customer 3 id is " + customer3.Id);
+            customer3.Password = "<user password>";
+
+            customer3.GetDetails();
 
             Console.ReadKey();
         }

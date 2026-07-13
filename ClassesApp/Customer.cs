@@ -11,6 +11,8 @@ namespace ClassesApp
 
         private readonly int _id;
 
+        private string _password;
+
         public int Id
         {
             get
@@ -18,10 +20,20 @@ namespace ClassesApp
                 return _id;
             }
         }
+
+        public string Password
+        {
+            set
+            {
+                _password = value;
+            }
+        }
+
         public string Name { get; set; }
         public string Address { get; set; }
 
         public string ContactNumber { get; set; }
+
 
         public Customer(string name, string address = "NA", string contactNumber = "NA")
         {
