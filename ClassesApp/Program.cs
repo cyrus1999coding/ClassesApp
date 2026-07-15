@@ -4,17 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Customer customer1 = new Customer();
-            Customer customer2 = new Customer("John Doe");
-            Customer customer3 = new Customer();
+            Rectangle rectangle1 = new Rectangle("Red");
+            Rectangle rectangle2 = new Rectangle("Blue");
 
-            customer1.GetDetails();
-            customer2.GetDetails();
-            customer3.GetDetails();
-
-            customer3.Password = "<user password>";
-
-            customer3.GetDetails();
+            rectangle1.DisplayDetails();
+            rectangle2.DisplayDetails();
 
             Console.ReadKey();
         }
